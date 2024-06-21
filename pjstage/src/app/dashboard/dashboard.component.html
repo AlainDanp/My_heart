@@ -1,0 +1,239 @@
+<h1>Tableau de bord</h1>
+
+<div [ngClass]="getClass()">
+  <div class="col-left">
+    <div class="card welcome-card">
+      <div class="card-head welcome-head-container">
+        <div class="col-left2">
+          Bienvenue !
+          <p>My heart Tableau de bord</p>
+        </div>
+        <div class="col-right2">
+          <img src="logo.png">
+        </div>
+      </div>
+      <div class="card-body welcome-body-container">
+        <div class="col-left3">
+          <div class="avatar">
+            <img src="CM.jpg" alt="">
+          </div>
+          <div class="name"> Dr. {{ username }}</div>
+          <p>Administrateur</p>
+        </div>
+        <div class="col-right3">
+          <div class="performance-container">
+            <div class="performance">
+              <div>Abonement</div>
+              <div>10%</div>
+            </div>
+            <div class="progress">
+              <div class="progress-bar"></div>
+            </div>
+          </div>
+          <div class="view-profile">
+            <button>
+              Voir Profil
+              <i class="far fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col task-col">
+    <div class="task">
+      <span class="bar bar-completed"></span>
+      <div class="details">
+        <div>Utilisateur total</div>
+        <p>6 tâches</p>
+      </div>
+      <i class="far fa-pen edit"></i>
+    </div>
+    <div class="task">
+      <span class="bar bar-active"></span>
+      <div class="details">
+        <div>Administrateur</div>
+        <p class="data">{{totalAdmins$ | async}} Administrateurs </p>
+      </div>
+      <i class="far fa-pen edit"></i>
+    </div>
+    <div class="task">
+      <span class="bar bar-new"></span>
+      <div class="details">
+        <div>Patients</div>
+        <p class="data">{{totalPatien$ | async}} Patients</p>
+      </div>
+      <i class="far fa-pen edit"></i>
+    </div>
+    <button class="create-group-button">
+      <i class="far fa-plus"></i>
+      Créer un Nouveau Utilisateur
+    </button>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-head">Lorem ipsum - dashboard</div>
+  <div class="card-body">
+    what is Loren sds,s
+    qskdqsd
+    sd,ksdk
+    sd,ksd,k
+    sd,ks,dk
+    sdks,dk,
+    k,dks,
+  </div>
+</div>
+
+<br>
+<br>
+
+<div class="card">
+  <div class="card-head">Liste des Patients | Email | Statut</div>
+  <div class="card-body">
+    <table class="user-table">
+      <thead>
+      <tr>
+        <th>Patient</th>
+        <th>Email</th>
+        <th>Statut</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>Utilisateur 1</td>
+        <td>user1example.com</td>
+        <td>Actif</td>
+        <td>
+          <button class="btn-view">
+            <i class='bx bx-show'></i> Voir
+          </button>
+          <button class="btn-delete">
+            <i class='bx bx-trash'></i> Supprimer
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>Utilisateur 2</td>
+        <td>user2example.com</td>
+        <td>Inactif</td>
+        <td>
+          <button class="btn-view">
+            <i class='bx bx-show'></i> Voir
+          </button>
+          <button class="btn-delete">
+            <i class='bx bx-trash'></i> Supprimer
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>Utilisateur 3</td>
+        <td>user3example.com</td>
+        <td>Actif</td>
+        <td>
+          <button class="btn-view">
+            <i class='bx bx-show'></i> Voir
+          </button>
+          <button class="btn-delete">
+            <i class='bx bx-trash'></i> Supprimer
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>Utilisateur 4</td>
+        <td>user4example.com</td>
+        <td>Inactif</td>
+        <td>
+          <button class="btn-view">
+            <i class='bx bx-show'></i> Voir
+          </button>
+          <button class="btn-delete">
+            <i class='bx bx-trash'></i> Supprimer
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>Utilisateur 5</td>
+        <td>user5example.com</td>
+        <td>Actif</td>
+        <td>
+          <button class="btn-view">
+            <i class='bx bx-show'></i> Voir
+          </button>
+          <button class="btn-delete">
+            <i class='bx bx-trash'></i> Supprimer
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>Utilisateur 6</td>
+        <td>user6example.com</td>
+        <td>Inactif</td>
+        <td>
+          <button class="btn-view">
+            <i class='bx bx-show'></i> Voir
+          </button>
+          <button class="btn-delete">
+            <i class='bx bx-trash'></i> Supprimer
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>Utilisateur 7</td>
+        <td>user7example.com</td>
+        <td>Actif</td>
+        <td>
+          <button class="btn-view">
+            <i class='bx bx-show'></i> Voir
+          </button>
+          <button class="btn-delete">
+            <i class='bx bx-trash'></i> Supprimer
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>Utilisateur 8</td>
+        <td>user8example.com</td>
+        <td>Inactif</td>
+        <td>
+          <button class="btn-view">
+            <i class='bx bx-show'></i> Voir
+          </button>
+          <button class="btn-delete">
+            <i class='bx bx-trash'></i> Supprimer
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>Utilisateur 9</td>
+        <td>user9example.com</td>
+        <td>Actif</td>
+        <td>
+          <button class="btn-view">
+            <i class='bx bx-show'></i> Voir
+          </button>
+          <button class="btn-delete">
+            <i class='bx bx-trash'></i> Supprimer
+          </button>
+        </td>
+      </tr>
+      <tr>
+        <td>Utilisateur 10</td>
+        <td>user10example.com</td>
+        <td>Inactif</td>
+        <td>
+          <button class="btn-view">
+            <i class='bx bx-show'></i> Voir
+          </button>
+          <button class="btn-delete">
+            <i class='bx bx-trash'></i> Supprimer
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
