@@ -33,16 +33,16 @@ export  const navbarData:INavbarData[]= [
     ]
   },
   {
-    routeLink: 'conseil',
+    routeLink: 'conseills',
     icon: 'fal fa-box-open',
-    label: 'Conseils',
+    label: 'Conseills',
     items:[
       {
-        routeLink: 'conseil/List',
+        routeLink: 'conseills/List',
         label: 'liste des conseils',
       },
       {
-        routeLink: 'conseil/ajouter',
+        routeLink: 'conseills/ajouter',
         label: 'Créer un conseil'
       }
     ]
@@ -56,10 +56,10 @@ export  const navbarData:INavbarData[]= [
         routeLink: 'settings/profile',
         label: 'Profile',
       },
-      {
-        routeLink: 'settings/personnaliser',
-        label: 'Personnaliser'
-      }
+      // {
+      //   routeLink: 'settings/personnaliser',
+      //   label: 'Personnaliser'
+      // }
     ]
   },
 ];

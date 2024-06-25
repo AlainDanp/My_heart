@@ -1,0 +1,134 @@
+<h1>Liste des Programmes</h1>
+
+<div [ngClass]="getClass()">
+  <div class="col-left">
+    <div class="card welcome-card">
+      <div class="card-head welcome-head-container">
+        <div class="col-left2">
+          Nos différent Programme
+          <p>My heart - Programme</p>
+        </div>
+        <div class="col-right2">
+          <img src="progra.png">
+        </div>
+      </div>
+      <div class="card-body welcome-body-container">
+        <div class="col-left3">
+            <div class="card">
+            <div class="para">Nos programmes de santé pour la remise  en forme de nos patients et utilisateurs</div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col task-col">
+    <div class="task">
+      <span class="bar bar-completed"></span>
+      <div class="details">
+        <div>Nombre de Programme total</div>
+        <p class="data"> {{totalProgramem$ | async}} Programmes</p>
+      </div>
+      <i class="far fa-pen edit"></i>
+    </div>
+      <span class="bar bar-new"></span>
+        <button class="create-group-button">
+          <i class="far fa-plus"></i>
+          Ajouter un programme
+        </button>
+  </div>
+</div>
+
+<br>
+<br>
+
+<div class="card">
+  <div class="card-head">Liste des Patients des programmes</div>
+  <div class="card-body">
+    <div class="flex flex-col">
+      <div class="overflow-x-auto">
+        <div class="inline-block min-w-full align-middle">
+          <div class="overflow-hidden shadow">
+            <table class="task-col min-w-full divide-y divide-gray-200 table-fixed dark:divide-gray-600">
+              <thead class="bg-gray-100 dark:bg-gray-700">
+              <tr>
+                <th scope="col" class="p-4">
+                  <div class="flex items-center">
+                    <input id="checkbox-all" aria-describedby="checkbox-1" type="checkbox"
+                           class="w-4 h-4 border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-primary-300 dark:focus:ring-primary-600 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600" />
+                    <label for="checkbox-all" class="sr-only">checkbox</label>
+                  </div>
+                </th>
+                <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">
+                  Nom
+                </th>
+                <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">
+                  Durée du programme(en jours)
+                </th>
+                <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">
+                  Image
+                </th>
+                <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">
+                  Actions
+                </th>
+              </tr>
+              </thead>
+              <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
+              <tr *ngFor="let programme of programmes"
+                  class="hover:bg-gray-100 dark:hover:bg-gray-700">
+                <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                  #{{ programme.id }}
+                </td>
+                <td class="p-4 text-sm font-normal text-gray-500 whitespace-nowrap dark:text-gray-400">
+                  <div class="text-base font-semibold text-gray-900 dark:text-white">
+                    {{ programme.titre }}
+                  </div>
+                </td>
+                <td class="p-4 text-base font-medium text-gray-900  whitespace-nowrap">
+                  {{ programme.duree }}
+                </td>
+                <td>
+                  <img [src]="programme.image"  width="200" />
+                </td>
+                <td class="p-4 space-x-2 whitespace-nowrap">
+                  <button type="button" id="#" data-drawer-target="drawer-update-product-default"
+                          data-drawer-show="drawer-update-product-default"
+                          aria-controls="drawer-update-product-default" data-drawer-placement="right"
+                          class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-violet-800 rounded-lg bg-primary-700 hover:bg-violet-800 focus:ring-4 focus:ring-primary-300 ">
+                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"
+                         xmlns="http://www.w3.org/2000/svg">
+                      <svg>
+                        <path
+                          d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                        <path fill-rule="evenodd"
+                              d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
+                              clip-rule="evenodd" />
+                      </svg>
+                    </svg>
+                    Update
+                  </button>
+                  <button type="button" id="" data-drawer-target="drawer-delete-product-default"
+                          data-drawer-show="drawer-delete-product-default"
+                          aria-controls="drawer-delete-product-default" data-drawer-placement="right"
+                          class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:ring-red-300 ">
+                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"
+                         xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                            d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    Delete item
+                  </button>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

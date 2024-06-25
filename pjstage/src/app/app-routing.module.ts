@@ -6,8 +6,6 @@ import {DashboardComponent} from "./dashboard/dashboard.component";
 import {AuthGuard} from "../AuthGuard";
 
 
-
-
 const routes: Routes = [
   {path: '',redirectTo: 'login',pathMatch: 'full'},
   {path: 'login', component:LoginComponent},
@@ -18,8 +16,8 @@ const routes: Routes = [
       { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]  },
       { path: 'programme',loadChildren: () => import('./programme/programme.module').then(m => m.ProgrammeModule)},
       { path: 'dons',loadChildren:() => import('./dons/dons.module').then(m => m.DonsModule) },
-      { path: 'conseil',loadChildren:() => import('./conseils/conseils-routing.module').then(m => m.ConseilsRoutingModule)},
-      { path: 'settings',loadChildren:() => import('./settings/settings-routing.module').then(m => m.SettingsRoutingModule)},
+      { path: 'conseills',loadChildren:() => import('./conseills/conseills.module').then(m => m.ConseillsModule)},
+      { path: 'settings',loadChildren:() => import('./settings/settings.modules').then(m => m.SettingsModule)},
     ]
   }
 ];

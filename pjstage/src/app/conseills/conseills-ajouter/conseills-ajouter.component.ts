@@ -1,20 +1,20 @@
 import { Component } from '@angular/core';
 import {LoginService} from "../../login/login.service";
-import {ConseilsModel} from "./conseils-ajouter.model";
-
+import {ConseillsModel} from "./conseills-ajouter.model";
+import {ConseilsModel} from "../../conseils/conseils-ajouter/conseils-ajouter.model";
 
 @Component({
-  selector: 'app-conseils-ajouter',
-  templateUrl: './conseils-ajouter.component.html',
-  styleUrl: './conseils-ajouter.component.scss'
+  selector: 'app-conseills-ajouter',
+  templateUrl: './conseills-ajouter.component.html',
+  styleUrl: './conseills-ajouter.component.scss'
 })
-export class ConseilsAjouterComponent {
-  conseil: ConseilsModel = { Titre: '', image: '', Description: ''};
+export class ConseillsAjouterComponent {
+  conseil: ConseillsModel = {Titre: '', image: '', Description: ''};
   selectedFile: File | null = null;
   conseils: ConseilsModel[] = []
 
-  constructor(private loginService: LoginService) { }
-
+  constructor(private loginService: LoginService) {
+  }
   conseilleuse() {
     if (this.selectedFile) {
       this.loginService.uploadImageCons(this.selectedFile).then(
@@ -41,5 +41,4 @@ export class ConseilsAjouterComponent {
     this.selectedFile = event.target.files[0];
     console.log('File selected:', this.selectedFile);
   }
-
 }

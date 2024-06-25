@@ -20,6 +20,12 @@ import {DonsComponent} from "./dons/dons.component";
 import {DashboardComponent} from "./dashboard/dashboard.component";
 import {ReactiveFormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {CommonModule} from "@angular/common";
+import {AngularFireStorageModule} from "@angular/fire/compat/storage";
+import { FormsModule } from '@angular/forms';
+import { ConseillsComponent } from './conseills/conseills.component';
+import { ConseillsAjouterComponent } from './conseills/conseills-ajouter/conseills-ajouter.component';
+
 
 @NgModule({
   declarations: [
@@ -36,11 +42,13 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
+    AngularFireStorageModule,
     OverlayModule,
     CdkMenuModule,
     ReactiveFormsModule

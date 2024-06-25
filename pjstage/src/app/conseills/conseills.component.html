@@ -1,40 +1,21 @@
-<h1>Tableau de bord</h1>
+<h1>Liste des Conseil</h1>
 
 <div [ngClass]="getClass()">
   <div class="col-left">
     <div class="card welcome-card">
       <div class="card-head welcome-head-container">
         <div class="col-left2">
-          Bienvenue !
-          <p>My heart Tableau de bord</p>
+          Nos différents Conseils
+          <p>My heart - Conseils</p>
         </div>
         <div class="col-right2">
-          <img src="logo.png">
+          <img src="cons.png">
         </div>
       </div>
       <div class="card-body welcome-body-container">
         <div class="col-left3">
-          <div class="avatar">
-            <img src="CM.jpg" alt="">
-          </div>
-          <div class="name"> Dr. {{ username }}</div>
-          <p>Administrateur</p>
-        </div>
-        <div class="col-right3">
-          <div class="performance-container">
-            <div class="performance">
-              <div>Abonement</div>
-              <div>10%</div>
-            </div>
-            <div class="progress">
-              <div class="progress-bar"></div>
-            </div>
-          </div>
-          <div class="view-profile">
-            <button>
-              Voir Profil
-              <i class="far fa-arrow-right"></i>
-            </button>
+          <div class="card">
+            <div class="para">Nos Conseils de santé pour la remise  en forme de nos patients et utilisateurs</div>
           </div>
         </div>
       </div>
@@ -44,47 +25,25 @@
     <div class="task">
       <span class="bar bar-completed"></span>
       <div class="details">
-        <div>Utilisateur total</div>
-        <p class="data">{{totalUsers$ | async}} Utilisateurs</p>
+        <div>Nombre de Conseil total</div>
+        <p class="data"> {{totalConseil$ | async}} Conseils</p>
       </div>
       <i class="far fa-pen edit"></i>
     </div>
-    <div class="task">
-      <span class="bar bar-active"></span>
-      <div class="details">
-        <div>Administrateur</div>
-        <p class="data">{{totalAdmins$ | async}} Administrateurs </p>
-      </div>
-      <i class="far fa-pen edit"></i>
-    </div>
-    <div class="task">
-      <span class="bar bar-new"></span>
-      <div class="details">
-        <div>Patients</div>
-        <p class="data">{{totalPatien$ | async}} Patients</p>
-      </div>
-      <i class="far fa-pen edit"></i>
-    </div>
+    <span class="bar bar-new"></span>
     <button class="create-group-button">
       <i class="far fa-plus"></i>
-      Créer un Nouveau Utilisateur
+      Ajouter un programme
     </button>
   </div>
 </div>
 
-<div class="card">
-  <div class="card-head">Lorem ipsum - dashboard</div>
-  <div class="card-body">
-    what is Loren sds,s
-
-  </div>
-</div>
 
 <br>
 <br>
 
 <div class="card">
-  <div class="card-head">Liste des Patients | Email | Statut</div>
+  <div class="card-head">Liste des Conseils</div>
   <div class="card-body">
     <div class="flex flex-col">
       <div class="overflow-x-auto">
@@ -104,16 +63,10 @@
                   Nom
                 </th>
                 <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">
-                  Email
+                  Description
                 </th>
                 <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">
-                  Statut
-                </th>
-                <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">
-                  Numéro de téléphone
-                </th>
-                <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">
-                  Genre
+                  Image
                 </th>
                 <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">
                   Actions
@@ -121,44 +74,23 @@
               </tr>
               </thead>
               <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
-              <tr *ngFor="let patient of patients$ | async" class="hover:bg-gray-100 dark:hover:bg-gray-700">
+              <tr *ngFor="let conseil of conseils"
+                  class="hover:bg-gray-100 dark:hover:bg-gray-700">
                 <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                  #{{ patient.id }}
+                  #{{ conseil.id}}
                 </td>
                 <td class="p-4 text-sm font-normal text-gray-500 whitespace-nowrap dark:text-gray-400">
                   <div class="text-base font-semibold text-gray-900 dark:text-white">
-                    {{ patient.Nom }}
+                    {{ conseil.Titre}}
                   </div>
                 </td>
                 <td class="p-4 text-base font-medium text-gray-900  whitespace-nowrap">
-                  {{ patient.Email }}
+                  {{ conseil.Description }}
                 </td>
-                <td class="max-w-sm p-4 overflow-hidden text-base font-medium text-gray-900 truncate whitespace-nowrap  xl:max-w-xs dark:text-gray-400">
-                  {{ patient.Statut }}
-                </td>
-                <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                  {{ patient.Numero}}
-                </td>
-                <td class="p-4 text-base font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                  {{ patient.Genre }}
+                <td>
+                  <img [src]="conseil.image"  width="200" />
                 </td>
                 <td class="p-4 space-x-2 whitespace-nowrap">
-                  <button type="button" id="#" data-drawer-target="drawer-update-product-default"
-                          data-drawer-show="drawer-update-product-default"
-                          aria-controls="drawer-update-product-default" data-drawer-placement="right"
-                          class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-violet-800 rounded-lg bg-primary-700 hover:bg-violet-800 focus:ring-4 focus:ring-primary-300 ">
-                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20"
-                         xmlns="http://www.w3.org/2000/svg">
-                      <svg>
-                        <path
-                          d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
-                        <path fill-rule="evenodd"
-                              d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
-                              clip-rule="evenodd" />
-                      </svg>
-                    </svg>
-                    Update
-                  </button>
                   <button type="button" id="" data-drawer-target="drawer-delete-product-default"
                           data-drawer-show="drawer-delete-product-default"
                           aria-controls="drawer-delete-product-default" data-drawer-placement="right"
@@ -169,7 +101,7 @@
                             d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
                             clip-rule="evenodd" />
                     </svg>
-                    Delete item
+                    Supprimer
                   </button>
                 </td>
               </tr>

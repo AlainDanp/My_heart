@@ -1,1 +1,29 @@
-<p>conseils-ajouter works!</p>
+<div class="task-col">
+  <div class="card welcome-card">
+    <div class="card-head welcome-head-container"> AJOUTER UN CONSEIL</div>
+    <div class="card-body welcome-body-container">
+      <div class="form-wrapper">
+        <div class="col-left">
+          <img src="addpro.png" class="side-image">
+        </div>
+        <form (ngSubmit)="conseilleuse()" class="programme-form">
+          <div class="form-group">
+            <input type="text" class="searchs" [(ngModel)]="conseil.Titre" name="title" placeholder="Titre du programme" required>
+          </div>
+          <div class="form-group">
+            <input type="file" (change)="onFileSelected($event)" class="form-control-file" required>
+          </div>
+          <div class="form-group">
+            <input type="number" class="searchs" [(ngModel)]="conseil.Description" name="duration" placeholder="Durée (jours)" required>
+          </div>
+          <button class="createbuton" type="submit">Créer Un Programme
+            <i class="far fa-plus"></i>
+          </button>
+        </form>
+        <div class="col-right">
+          <img src="vie.png" class="side-image">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

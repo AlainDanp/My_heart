@@ -13,18 +13,18 @@ export const languages = [
 export const  notifications =  [
   {
     icon: 'far fa-cloud-download',
-    subject: 'Télechargement fait',
-    description: 'Loren ipsum dolor sit amet, consectetuer',
+    subject: 'Conseil Ajouter',
+    description: 'Vous avez ajouter le conseil une semmain  sans sel',
   },
   {
     icon: 'far fa-cloud-upload',
-    subject: 'Mise à jour complete',
-    description: 'Lorent ipsum dolor sit',
+    subject: 'Porgramme Ajouter',
+    description: 'Vous avez ajouter le programme sport pour tous',
   },
   {
     icon: 'far fa-trash',
-    subject: '20MB trash files',
-    description: 'Lorent ipsum dolor sit',
+    subject: 'Bienvenu sur my heart',
+    description: 'V',
   }
 ];
 

@@ -68,6 +68,7 @@ export class LoginComponent implements OnInit{
       if (result && result.user) {
         console.log('User signed up:', result.user);
         await this.authService.updateUser(this.signUpForm.value.username);
+        await this.authService.updateUser(this.signUpForm.value.email);
         await this.authService.addUserToFirestore({
           uid: result.user.uid,
           username: this.signUpForm.value.username,

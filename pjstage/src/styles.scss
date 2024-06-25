@@ -26,8 +26,10 @@ body.dark {
   border-radius: .5rem;
   background-color: #fff;
   margin: 1.25rem 0 1.25rem 0;
-  box-shadow: 0 .25rem .5rem #e6edef;
+  box-shadow: 0 .50rem .9rem #e6edef;
   color: #495057;
+  width: auto;
+  height: auto;
 
   .card-head {
     padding: 1rem 1.5rem;
@@ -62,3 +64,4 @@ body.dark {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+

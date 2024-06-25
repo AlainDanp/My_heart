@@ -1,7 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { LoginService } from "../login/login.service";
+import { LoginService, Patient } from "../login/login.service";
 import {switchMap} from "rxjs/operators";
-import {Observable} from "rxjs";
+import {Observable, of} from "rxjs";
 
 @Component({
   selector: 'app-dashboard',
@@ -11,7 +11,8 @@ import {Observable} from "rxjs";
 export class DashboardComponent implements OnInit {
   totalAdmins$: Observable<number> = new Observable<number>();
   totalPatien$: Observable<number> = new Observable<number>();
-
+  totalUsers$: Observable<number> = new Observable<number>();
+  patients$: Observable<Patient[]> = of([]);
   innerWidth: any;
   username: string = '';
 
@@ -19,8 +20,10 @@ export class DashboardComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     this.innerWidth = window.innerWidth;
+    this.patients$ = this.loginService.getPatients();
     this.totalAdmins$ = this.loginService.getTotalAdmins();
     this.totalPatien$ = this.loginService.getTotalPatients();
+    this.totalUsers$ = this.loginService.getTotalUsers();
     this.loginService.getCurrentUser().pipe(
       switchMap(user => {
         if (user) {
